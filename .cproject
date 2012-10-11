@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="org.eclipse.cdt.core.default.config.1758903934">
+			<storageModule buildSystemId="org.eclipse.cdt.core.defaultConfigDataProvider" id="org.eclipse.cdt.core.default.config.1758903934" moduleId="org.eclipse.cdt.core.settings" name="Configuration">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="org.coocox.ExternalSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
+					<externalSetting>
+						<entry flags="" kind="includePath" name="C:\CooCox\CoIDE\gcc\arm-none-eabi\include"/>
+						<entry flags="" kind="includePath" name="C:\CooCox\CoIDE\gcc\lib\gcc\arm-none-eabi\4.6.2\include"/>
+						<entry flags="" kind="includePath" name="C:\CooCox\CoIDE\gcc\lib\gcc\arm-none-eabi\4.6.2\include-fixed"/>
+						<entry flags="" kind="includePath" name="."/>
+						<entry flags="" kind="includePath" name="cmsis"/>
+						<entry flags="" kind="includePath" name="cmsis_boot"/>
+						<entry flags="" kind="includePath" name="Libraries/STM32_ETH_Driver/inc"/>
+						<entry flags="" kind="includePath" name="Project/inc"/>
+						<entry flags="" kind="includePath" name="stm_lib"/>
+						<entry flags="" kind="includePath" name="stm_lib/inc"/>
+						<entry flags="" kind="includePath" name="Utilities/efsl/include"/>
+						<entry flags="" kind="includePath" name="Utilities/efsl/include/interface"/>
+						<entry flags="" kind="includePath" name="Utilities/lwip-1.3.1/port"/>
+						<entry flags="" kind="includePath" name="Utilities/lwip-1.3.1/src/include"/>
+						<entry flags="" kind="includePath" name="Utilities/lwip-1.3.1/src/include/ipv4"/>
+						<entry flags="" kind="includePath" name="Utilities/lwip-1.3.1/src/include/lwip"/>
+						<entry flags="" kind="includePath" name="Utilities/lwip-1.3.1/src/netif/ppp"/>
+						<entry flags="" kind="includePath" name="Utilities/STM32_EVAL"/>
+						<entry flags="" kind="includePath" name="Utilities/STM32_EVAL/STM3210C_EVAL"/>
+						<entry flags="" kind="macro" name="__GNUC__" value=""/>
+						<entry flags="" kind="macro" name="STM32F10X_CL" value=""/>
+						<entry flags="" kind="macro" name="USE_STDPERIPH_DRIVER" value=""/>
+						<entry flags="" kind="macro" name="__ASSEMBLY__" value=""/>
+						<entry flags="" kind="macro" name="STM32F107VC" value=""/>
+					</externalSetting>
+				</externalSettings>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+			<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.pathentry">
+		<pathentry kind="src" path=""/>
+		<pathentry include="C:/CooCox/CoIDE/gcc/arm-none-eabi/include" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/gcc/lib/gcc/arm-none-eabi/4.6.2/include" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/gcc/lib/gcc/arm-none-eabi/4.6.2/include-fixed" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/cmsis" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/cmsis_boot" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Libraries/STM32_ETH_Driver/inc" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Project/inc" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/stm_lib" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/stm_lib/inc" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/efsl/include" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/efsl/include/interface" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/lwip-1.3.1/port" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/lwip-1.3.1/src/include" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/lwip-1.3.1/src/include/ipv4" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/lwip-1.3.1/src/include/lwip" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/lwip-1.3.1/src/netif/ppp" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/STM32_EVAL" kind="inc" path="" system="true"/>
+		<pathentry include="C:/CooCox/CoIDE/workspace/RECo_lwIP_STM/Utilities/STM32_EVAL/STM3210C_EVAL" kind="inc" path="" system="true"/>
+		<pathentry kind="mac" name="__GNUC__" path="" value=""/>
+		<pathentry kind="mac" name="STM32F10X_CL" path="" value=""/>
+		<pathentry kind="mac" name="USE_STDPERIPH_DRIVER" path="" value=""/>
+		<pathentry kind="mac" name="__ASSEMBLY__" path="" value=""/>
+		<pathentry kind="mac" name="STM32F107VC" path="" value=""/>
+		<pathentry kind="out" path=""/>
+	</storageModule>
+</cproject>

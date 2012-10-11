@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="postbuild" name="test">
+  <property name="project.name" value="RECo_lwIP_STM"/>
+  <property name="project.debug" value="Debug"/>
+  <property name="project.obj" value="Debug/obj"/>
+  <property name="project.bin" value="Debug/bin"/>
+
+  <!-- associate current path to the link file path-->
+  <dirname file="$${basedir}" property="linkdir"/>
+
+  <target depends="compile" name="postbuild">
+    <exec executable="cmd">
+      <arg line="/C &quot;${gcc.home}/arm-none-eabi-objdump&quot; -d &quot;${project.bin}/${project.name}.elf&quot; &gt; &quot;${project.bin}/${project.name}.txt&quot;"/>
+    </exec>
+    <exec executable="cmd">
+      <arg line="/C &quot;${gcc.home}/arm-none-eabi-objcopy&quot; -O binary &quot;${project.bin}/${project.name}.elf&quot; &quot;${project.bin}/${project.name}.bin&quot;"/>
+    </exec>
+    <exec executable="cmd">
+      <arg line="/C &quot;${gcc.home}/arm-none-eabi-objcopy&quot; -O ihex &quot;${project.bin}/${project.name}.elf&quot; &quot;${project.bin}/${project.name}.hex&quot;"/>
+    </exec>
+    <exec dir="${basedir}/${project.bin}" executable="cmd">
+      <arg line="/C &quot;${gcc.home}/arm-none-eabi-size&quot; &quot;${project.name}.elf&quot;"/>
+    </exec>
+  </target>
+  
+  <taskdef resource="cpptasks.tasks"/>
+  <target name="compile">
+    <mkdir dir="${project.bin}"/>
+    <mkdir dir="${project.obj}"/>
+    <cc debug="true" objdir="${project.obj}" outfile="${project.bin}/${project.name}.elf" outtype="executable" subsystem="console">
+      <!-- compile all the c source file in the project -->
+      
+      <fileset casesensitive="false" dir=".">
+        <include name="**/*.c"/>
+        <include name="**/*.cpp"/>
+        <include name="**/*.s"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/src/netif/ethernetif.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/diskio.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/diskio.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/ff.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/ff.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/ffconf.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/integer.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/option/cc932.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/option/cc936.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/option/cc949.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/option/cc950.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/option/ccsbcs.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/fatFs/option/syscall.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/src/include/ipv6/lwip/icmp.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/src/include/ipv6/lwip/inet.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/src/include/ipv6/lwip/ip.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/src/include/ipv6/lwip/ip_addr.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/tftpserver.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/tftpserver.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/tftputils.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/tftputils.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/arch/junk/init.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/arch/junk/lib.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/arch/junk/sys_arch.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/arch/junk/sys_arch.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/client.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/projCfg/stm32_cfg/stm32f10x_it1.c"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/projCfg/stm32_cfg/stm32f10x_it1.h"/>
+        <exclude name="C:/CooCox/CoIDE/workspace/RECo_lwIP/lwIP/port/fsdata.c"/>
+        <exclude name="Utilities/lwip-1.3.1/src/netif/ethernetif.c"/>
+        <exclude name="Utilities/lwip-1.3.1/src/include/ipv6/lwip/icmp.h"/>
+        <exclude name="Utilities/lwip-1.3.1/src/include/ipv6/lwip/inet.h"/>
+        <exclude name="Utilities/lwip-1.3.1/src/include/ipv6/lwip/ip.h"/>
+        <exclude name="Utilities/lwip-1.3.1/src/include/ipv6/lwip/ip_addr.h"/>
+        <exclude name="Utilities/lwip-1.3.1/port/arch/junk/init.h"/>
+        <exclude name="Utilities/lwip-1.3.1/port/arch/junk/lib.h"/>
+        <exclude name="Utilities/lwip-1.3.1/port/arch/junk/sys_arch.c"/>
+        <exclude name="Utilities/lwip-1.3.1/port/arch/junk/sys_arch.h"/>
+        <exclude name="Libraries/CMSIS/Core/CM3/startup/gcc/startup_stm32f10x_cl.s"/>
+        <exclude name="Libraries/CMSIS/Core/CM3/startup/gcc/startup_stm32f10x_hd.s"/>
+        <exclude name="Libraries/CMSIS/Core/CM3/startup/gcc/startup_stm32f10x_ld.s"/>
+        <exclude name="Libraries/CMSIS/Core/CM3/startup/gcc/startup_stm32f10x_md.s"/>
+        <exclude name="Utilities/lwip-1.3.1/port/fsdata.c"/>
+        <exclude name="Utilities/STM32_EVAL/STM3210C_EVAL/stm3210c_eval_lcd.c"/>
+        <exclude name="Utilities/STM32_EVAL/STM3210C_EVAL/stm3210c_eval_lcd.h"/>
+      </fileset>
+      <project outfile="${project.name}.elf" overwrite="true" type="xcode"/>
+      
+      <!-- defines -->
+      <defineset>
+        <define name="STM32F10X_CL"/>
+        <define name="USE_STDPERIPH_DRIVER"/>
+        <define name="__ASSEMBLY__"/>
+        <define name="STM32F107VC"/>
+      </defineset>
+      
+      <!-- include compile path -->
+      <includepath path="."/>
+      <includepath path="Libraries/STM32_ETH_Driver/inc"/>
+      <includepath path="Utilities/lwip-1.3.1/src/include"/>
+      <includepath path="Utilities/lwip-1.3.1/port"/>
+      <includepath path="Utilities/lwip-1.3.1/src/include/ipv4"/>
+      <includepath path="Utilities/efsl/include"/>
+      <includepath path="Project/inc"/>
+      <includepath path="Utilities/efsl/include/interface"/>
+      <includepath path="Utilities/STM32_EVAL"/>
+      <includepath path="Utilities/STM32_EVAL/STM3210C_EVAL"/>
+      <includepath path="Utilities/lwip-1.3.1/src/include/lwip"/>
+      <includepath path="Utilities/lwip-1.3.1/src/netif/ppp"/>
+      <includepath path="stm_lib"/>
+      <includepath path="stm_lib/inc"/>
+      <includepath path="cmsis_boot"/>
+      <includepath path="cmsis"/>
+      
+      <!-- arm-none-eabi-gcc compiler arguments -->
+      <compilerarg value="-mcpu=cortex-m3"/>
+      <compilerarg value="-mthumb"/>
+      <compilerarg value="-Wall"/>      
+      
+      <compilerarg value="-O0"/>
+      <compilerarg value="-ffunction-sections"/>
+      <compilerarg value="-std=iso9899:1999"/>
+      <compilerarg value="-pedantic"/>
+      <compilerarg value="-g"/>
+      
+      <!-- arm-none-eabi-gcc linker arguments -->
+      <linkerarg value="-O0"/>
+      <linkerarg value="-nostartfiles"/>
+      <linkerarg value="-Map=${project.name}.map"/>
+      <linkerarg value="-mcpu=cortex-m3"/>
+      <linkerarg value="-mthumb"/>
+      <linkerarg value="-L${linkdir}"/>
+      <linkerarg value="--gc-sections"/>
+      <linkerarg value="-T${linkdir}\link.ld"/>
+      
+    </cc>
+  </target>
+
+  <target name="clean">
+    <delete dir="${project.bin}"/>
+    <delete dir="${project.obj}"/>
+    <delete dir="${project.debug}"/>
+    <delete dir="${project.name}.elf.xcodeproj"/>
+  </target>
+  
+  <target depends="clean" name="rebuild">
+    <antcall target="postbuild"/>
+  </target>
+
+</project>

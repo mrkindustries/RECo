@@ -97,16 +97,15 @@
       <includepath path="Utilities/lwip-1.3.1/port"/>
       <includepath path="Utilities/lwip-1.3.1/src/include/ipv4"/>
       <includepath path="Utilities/efsl/include"/>
-      <includepath path="Project/inc"/>
       <includepath path="Utilities/efsl/include/interface"/>
       <includepath path="Utilities/STM32_EVAL"/>
       <includepath path="Utilities/STM32_EVAL/STM3210C_EVAL"/>
       <includepath path="Utilities/lwip-1.3.1/src/include/lwip"/>
       <includepath path="Utilities/lwip-1.3.1/src/netif/ppp"/>
-      <includepath path="stm_lib"/>
-      <includepath path="stm_lib/inc"/>
-      <includepath path="cmsis_boot"/>
-      <includepath path="cmsis"/>
+      <includepath path="Libraries/stm_lib/inc"/>
+      <includepath path="Libraries/cmsis"/>
+      <includepath path="Libraries/cmsis_boot"/>
+      <includepath path="inc"/>
       
       <!-- arm-none-eabi-gcc compiler arguments -->
       <compilerarg value="-mcpu=cortex-m3"/>
